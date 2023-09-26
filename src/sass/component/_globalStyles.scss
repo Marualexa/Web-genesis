@@ -1,0 +1,37 @@
+$fuentes-h1: "Space Grotesk", sans-serif;
+$fuentes-p: "Roboto", sans-serif;
+
+//colores fuente
+$Black: #171926;
+$Grey-dark: #51556A;
+$Grey-clear: #B2B6CC;
+$White: #ffffff;
+
+//colores variados
+$color-1: #FBA1B7;
+$color-2: #FFDBAA;
+$color-3: #FFD1DA;
+$color-4: #FFF0F5;
+
+// medias queries
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+@mixin tablet {
+    @media (min-width: #{$mediaMinWidth}) and (max-width: #{$mediaBp1Width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$mediaBp1Width}) and (max-width: #{$mediaMaxWidth - 1px}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

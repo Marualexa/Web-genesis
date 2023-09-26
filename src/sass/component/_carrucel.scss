@@ -1,0 +1,68 @@
+.main-carrucel {
+    width: 360px;
+    height: 50vh !important;
+    margin-top: 41px;
+
+    .v-carousel {
+        height: 380px !important;
+    }
+
+    h4 {
+        font-family: $fuentes-h1;
+        font-size: 18px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: $Black;
+    }
+
+    .v-btn--icon.v-btn--density-default {
+        display: none;
+    }
+
+
+    .v-carousel__controls {
+        display: none;
+        margin: 20px;
+    }
+
+    .text {
+        display: grid;
+        text-align: justify;
+        position: relative;
+
+
+        .items {
+            height: 205px;
+            width: 290px;
+            padding: 13px;
+            background: #FFD1DA;
+            box-shadow: 5px 0 5px #FFD1DA, 7px 20px 60px #fff;
+        }
+
+        p {
+            font-family: $fuentes-p;
+            font-size: 15px;
+            color: $Black;
+        }
+
+        .img-inf {
+            display: flex;
+            justify-content: space-between;
+
+            .est {
+                width: 110px;
+                height: 101px;
+                object-fit: contain;
+            }
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+    }
+
+    .py-4 {
+        margin-top: 25px;
+    }
+}

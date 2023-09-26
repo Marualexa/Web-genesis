@@ -1,0 +1,48 @@
+.container-items {
+    display: grid;
+    grid-template-columns: 165px 181px;
+    width: 360px;
+    height: 25vh;
+    margin-top: -23px;
+
+    .container__item {
+        grid-column: 2;
+
+        h5 {
+            font-family: $fuentes-p;
+            color: $Black;
+            font-size: 14px;
+            color: $Black;
+        }
+    }
+
+    .container__card {
+        grid-column: 1;
+        padding-left: 10px;
+
+        .info__style {
+            display: grid;
+            grid-template-columns: 130px 40px;
+            grid-template-rows: 1fr;
+            width: 190px;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+
+            img {
+                width: 30px;
+                height: 30px;
+                grid-row: 1;
+                grid-column: 2;
+            }
+
+            p {
+                font-family: $fuentes-p;
+                font-size: 14px;
+                grid-column: 1;
+                text-align: justify;
+                color: $Black;
+            }
+        }
+    }
+}

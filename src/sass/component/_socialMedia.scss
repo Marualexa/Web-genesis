@@ -1,0 +1,31 @@
+.icon-social {
+    width: 360px;
+    height: 33vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .container__card {
+        display: grid;
+        grid-gap: 10px;
+    }
+
+    .icon__social {
+        display: grid;
+        grid-template-columns: 180px;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: $color-3;
+        box-shadow: 5px 0 5px $color-3,
+            7px 20px 60px $White;
+        padding: 10px;
+    }
+
+    img {
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+    }
+}
