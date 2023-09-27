@@ -1,5 +1,6 @@
 <template>
   <main class="container-items">
+    <img class="avion" src="../assets/avion.png" alt="" />
     <div class="container__item">
       <h5>Contenido viajero, mucha conexión y diversión</h5>
     </div>

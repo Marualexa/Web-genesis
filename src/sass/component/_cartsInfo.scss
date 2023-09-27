@@ -1,12 +1,26 @@
 .container-items {
     display: grid;
     grid-template-columns: 165px 181px;
+    grid-template-rows: 1fr 1fr;
     width: 360px;
     height: 25vh;
     margin-top: -23px;
 
+    .avion {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        grid-column: 2;
+        grid-row: 2;
+        display: grid;
+        place-self: center;
+        opacity: 0.3;
+    }
+
     .container__item {
         grid-column: 2;
+        grid-row: 1;
+        width: 186px;
 
         h5 {
             font-family: $fuentes-p;
@@ -18,6 +32,7 @@
 
     .container__card {
         grid-column: 1;
+        grid-row: 2;
         padding-left: 10px;
 
         .info__style {
