@@ -1,18 +1,23 @@
 .main-carrucel {
-    width: 360px;
-    height: 50vh !important;
-    margin-top: 41px;
+    width: 100%;
+    margin-top: 65px;
+
+    @include tablet {
+        display: grid;
+        justify-content: center;
+    }
 
     .v-carousel {
-        height: 380px !important;
+        height: 410px !important;
     }
 
     h4 {
-        font-family: $fuentes-h1;
-        font-size: 18px;
+        font-family: $fuente-cursiva;
+        font-size: 25px;
         margin-bottom: 30px;
         text-align: center;
         color: $Black;
+        font-weight: lighter;
     }
 
     .v-btn--icon.v-btn--density-default {
@@ -29,25 +34,38 @@
         display: grid;
         text-align: justify;
         position: relative;
+        height: 200px;
 
 
         .items {
-            height: 205px;
-            width: 290px;
+            width: 435px;
+            height: 270px;
             padding: 13px;
             background: #FFD1DA;
             box-shadow: 5px 0 5px #FFD1DA, 7px 20px 60px #fff;
+            padding: 30px;
+
+            @include movil {
+                width: 290px;
+                height: 215px;
+            }
         }
 
         p {
-            font-family: $fuentes-p;
-            font-size: 15px;
+            font-family: $fuente-cursiva;
+            font-size: 20px;
             color: $Black;
+            margin-bottom: 20px;
+
+            @include movil {
+                font-size: 16px;
+            }
         }
 
         .img-inf {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            align-items: center;
 
             .est {
                 width: 110px;
@@ -56,6 +74,8 @@
             }
 
             img {
+                width: 30px;
+                height: 30px;
                 object-fit: contain;
             }
         }
@@ -63,6 +83,6 @@
     }
 
     .py-4 {
-        margin-top: 25px;
+        margin-top: 65px;
     }
 }

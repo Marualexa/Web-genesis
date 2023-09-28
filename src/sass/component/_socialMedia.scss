@@ -1,31 +1,87 @@
 .icon-social {
-    width: 360px;
-    height: 33vh;
+    width: 100%;
+    height: 18vh;
     display: grid;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
+
+    p {
+        font-family: $fuente-cursiva;
+        font-size: 25px;
+        color: $Black;
+        text-align: center;
+    }
 
     .container__card {
         display: grid;
         grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        @include movil {
+            grid-template-columns: 180px;
+            grid-template-rows: 1fr;
+        }
+
+        .icon__social {
+            display: grid;
+            border-radius: 20px;
+            background: $color-3;
+            box-shadow: 5px 0 5px $color-3,
+                7px 20px 60px $White;
+            padding: 10px;
+            width: 190px;
+
+            img {
+                width: 35px;
+                height: 35px;
+                object-fit: cover;
+                display: grid;
+            }
+        }
     }
 
-    .icon__social {
-        display: grid;
-        grid-template-columns: 180px;
-        grid-template-rows: 1fr;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        background: $color-3;
-        box-shadow: 5px 0 5px $color-3,
-            7px 20px 60px $White;
-        padding: 10px;
-    }
 
-    img {
-        width: 35px;
-        height: 35px;
-        object-fit: cover;
-    }
+    // width: 360px;
+    // height: 33vh;
+    // display: grid;
+    // justify-content: center;
+    // align-items: center;
 }
+
+//     p {
+//         font-family: $fuente-cursiva;
+//         font-size: 20px;
+//         color: $Black;
+//     }
+
+//     @include tablet {
+//         width: 480px;
+//         height: 40vh;
+//     }
+
+//     .container__card {
+//         display: grid;
+//         grid-gap: 10px;
+//     }
+
+//     .icon__social {
+//         display: grid;
+//         grid-template-columns: 180px;
+//         grid-template-rows: 1fr;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 20px;
+//         background: $color-3;
+//         box-shadow: 5px 0 5px $color-3,
+//             7px 20px 60px $White;
+//         padding: 10px;
+//     }
+
+//     img {
+//         width: 35px;
+//         height: 35px;
+//         object-fit: cover;
+//     }
+// }

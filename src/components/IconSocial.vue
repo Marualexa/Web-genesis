@@ -1,5 +1,6 @@
 <template>
   <div class="icon-social">
+    <p>El mejor vieje comienza adentro</p>
     <div class="container__card">
       <Generic
         v-for="(item, index) in items"
