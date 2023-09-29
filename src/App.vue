@@ -14,5 +14,6 @@ import IconSocial from "./components/IconSocial.vue";
   </div>
 </template>
 
-<style scoped>
-</style>
+<style lang="sass">
+
+</style>  
