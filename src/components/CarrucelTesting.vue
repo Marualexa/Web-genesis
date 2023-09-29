@@ -15,8 +15,8 @@
                 </p>
 
                 <div class="img-inf">
-                  <img class="est" src="../assets/estrellas.png" alt="" />
-                  <img src="../assets/icon.svg" alt="" />
+                  <img class="est" src="@img/estrellas.png" alt="" />
+                  <img src="@img/icon.svg" alt="" />
                 </div>
               </v-card>
             </div>
@@ -25,18 +25,18 @@
         <div class="d-flex justify-space-around align-center py-4">
           <img
             width="20"
-            src="../assets/flecha-left.svg"
+            src="@img/flecha-left.svg"
             alt="Imagen Anterior"
             @click="model = Math.max(model - 1, 0)"
           />
           <img
-            src="../assets/boton.svg"
+            src="@img/boton.svg"
             alt="Contador"
             style="width: 30px; height: 30px"
           />
           <img
             width="20"
-            src="../assets/flecha-right.svg"
+            src="@img/flecha-right.svg"
             alt="Imagen Siguiente"
             @click="model = Math.min(model + 1, 4)"
           />
@@ -96,5 +96,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import "../sass/importComponent.scss"
+@import "@sass/importComponent.scss"
 </style>

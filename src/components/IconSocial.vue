@@ -15,10 +15,10 @@
 
 <script setup>
 import Generic from "./GenericCards.vue";
-import instagram from "../assets/instagram.png";
-import whatsapp from "../assets/whatsapp.png";
-import Spotify from "../assets/Spotify.svg";
-import gmail from "../assets/gmail.png";
+import instagram from "@img/instagram.png";
+import whatsapp from "@img/whatsapp.png";
+import Spotify from "@img/Spotify.svg";
+import gmail from "@img/gmail.png";
 
 const items = [
   {
@@ -45,5 +45,6 @@ const items = [
 </script>
 
 <style lang="sass">
-@import "../sass/importComponent.scss"
+@import "@sass/importComponent.scss"
 </style>
+

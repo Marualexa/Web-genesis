@@ -18,7 +18,7 @@
 
 <script setup>
 import Generic from "./GenericCards.vue";
-import imgCheck from "../assets/check-green.png";
+import imgCheck from "@img/check-green.png";
 
 const items = [
   {
@@ -38,3 +38,7 @@ const items = [
   },
 ];
 </script>
+
+<style lang="sass">
+@import "@sass/importComponent.scss"
+</style>
