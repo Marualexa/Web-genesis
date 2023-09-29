@@ -10,5 +10,11 @@ export default defineConfig({
         additionalData: `@import "@/sass/importGlobal.scss";`
       }
     }
-  }
+  },
+  resolve: {
+    alias: {
+      '@img': fileURLToPath(new URL('src/assets/', import.meta.url)),
+      '@': fileURLToPath(new URL('src/', import.meta.url)),
+    }
+  },
 })
