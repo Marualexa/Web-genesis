@@ -1,6 +1,5 @@
-$fuentes-h1: "Space Grotesk", sans-serif;
-$fuentes-p: "Roboto", sans-serif;
-$fuente-cursiva: "Brush Script MT";
+$fuentes-h1: "Mooli", sans-serif;
+$fuente-cursiva: "Indie Flower", sans-serif;
 
 //colores fuente
 $Black: #171926;
@@ -8,7 +7,6 @@ $Grey-dark: #51556A;
 $Grey-clear: #B2B6CC;
 $White: #ffffff;
 
-//colores variados
 $color-1: #FBA1B7;
 $color-2: #FFDBAA;
 $color-3: #FFD1DA;
@@ -19,6 +17,30 @@ $color-4: #FFF0F5;
     padding: 0;
     box-sizing: border-box;
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 12.5fr 75fr 12.5fr;
+    grid-template-rows: 400px 250px 240px 400px;
+}
+// diseño movil
+@media screen and (min-width: 380px) and (max-width: 670px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-rows: 250px 150px 350px 200px;
+    }
+}
+
+@media screen and (min-width: 670px) and (max-width: 990px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 10.5fr 70fr 10.5fr;
+        grid-template-rows: 350px 150px 205px 320px;
+    }
+}
+
+
 
 @mixin movil {
     @media screen and (min-width: 380px) and (max-width: 570px) {

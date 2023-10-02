@@ -1,9 +1,6 @@
 <template>
   <main class="container-items">
-    <!-- <img class="avion" src="../assets/avion.png" alt="" /> -->
-    <div class="container__item">
-      <h5>Contenido viajero, mucha conexión y diversión</h5>
-    </div>
+    <img class="avion" src="../assets/avion.png" alt="" />
     <div class="container__card">
       <Generic
         v-for="(item, index) in items"
@@ -25,6 +22,7 @@ const items = [
     styleCart: "info__style",
     imgCheck: imgCheck,
     information: "Reservas aéreas",
+    
   },
   {
     styleCart: "info__style",

@@ -1,43 +1,64 @@
 .main {
+    grid-column: 2;
     max-width: 100%;
-    height: 317px;
+    height: auto;
     display: grid;
+    grid-template-columns: .5fr .5fr 1fr 1fr;
+    grid-template-rows: 240px 110px 110px;
     justify-content: center;
     align-items: center;
 
     @include tablet {
-        width: 100vh;
-        height: 300px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 50px 100px 100px;
+        width: 100%;
+        height: auto;
+        grid-column: 2;
+        align-items: start;
     }
 
     @include movil {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 50px 50px 50px;
         width: 100%;
-        height: auto;
+        height: 250px;
         display: grid;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         background-color: transparent;
-        margin-bottom: -45px;
     }
 
     .fondo {
-        width: 60vw;
-        height: 317px;
-        object-fit: cover;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        grid-column: 1 / 7;
+        grid-row: 1 / 3;
+
+        .fondo_img {
+            width: 75vw;
+            height: 350px;
+            object-fit: cover;
+
+            @include tablet {
+                width: 100%;
+                height: 245px;
+            }
+
+            @include movil {
+                width: 100%;
+                height: 190px;
+            }
+        }
 
         @include tablet {
-            height: 300px;
+            width: 100%;
             object-fit: cover;
         }
 
         @include movil {
-            width: 100vw;
-            height: 165px;
+            width: 100%;
+            height: 215px;
             object-fit: cover;
-            position: relative;
         }
     }
 
@@ -45,30 +66,35 @@
         display: grid;
         justify-content: center;
         align-items: center;
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+
+        @include tablet {
+            grid-column: 2/3;
+            grid-row: 3 / 4;
+            margin-left: 16px;
+        }
+
+        @include movil {
+            grid-column: 2;
+            grid-row: 2 / 3;
+        }
 
         .perfel {
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            position: absolute;
-            top: 164px;
-            left: 313px;
 
             @include tablet {
-                width: 180px;
-                height: 180px;
+                width: 190px;
+                height: 190px;
                 object-fit: cover;
-                top: 172px;
-                left: 178px;
             }
 
             @include movil {
-                width: 135px;
-                height: 135px;
+                width: 140px;
+                height: 140px;
                 object-fit: cover;
-                position: absolute;
-                top: 80px;
-                left: 15px;
                 border-radius: 50%;
             }
         }
@@ -79,15 +105,21 @@
         justify-content: center;
         align-items: center;
         width: 200px;
-        position: relative;
+        grid-column: 4;
+        grid-row: 1 / 3;
+
+        @include tablet {
+            grid-column: 4;
+            grid-row: 3;
+        }
 
         @include movil {
             display: grid;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
             height: auto;
-            width: 200px;
+            grid-column: 4;
+            grid-row: 2;
         }
 
         h1 {
@@ -96,26 +128,43 @@
             font-weight: bold;
             margin-bottom: 0;
             text-align: center;
-            font-size: 25px;
-            top: -155px;
-            left: 306px;
-            position: absolute;
-            width: 364px;
+            font-size: 28px;
+            width: 219px;
             background-color: rgba(0, 0, 0, 0.5);
 
             @include tablet {
-                top: -100px;
-                left: 198px;
-                width: 282px;
-                font-size: 23px;
+                width: 255px;
+                font-size: 25px;
             }
 
             @include movil {
-                font-size: 18px;
-                top: -100px;
-                left: 150px;
+                font-size: 20px;
                 width: 175px;
             }
+        }
+    }
+
+    p {
+        font-family: $fuente-cursiva;
+        color: $Black;
+        font-size: 25px;
+        grid-column: 3 / 5;
+        grid-row: 3;
+        display: grid;
+        justify-content: flex-end;
+
+        @include tablet {
+            font-size: 22px;
+            grid-column: 4;
+            grid-row: 4;
+        }
+
+        @include movil {
+            font-size: 18px;
+            font-weight: inherit;
+            color: $Black;
+            grid-column: 4;
+            grid-row: 4;
         }
     }
 }

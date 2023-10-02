@@ -8,6 +8,7 @@
         :styleCart="item.styleCart"
         :imgCheck="item.imgCheck"
         :information="item.information"
+        :url="url"
       />
     </div>
   </div>
@@ -25,21 +26,25 @@ const items = [
     styleCart: "icon__social",
     imgCheck: instagram,
     information: "",
+    url: "https://mail.google.com"
   },
   {
     styleCart: "icon__social",
     imgCheck: whatsapp,
     information: "",
+    url: "https://mail.google.com"
   },
   {
     styleCart: "icon__social",
     imgCheck: Spotify,
     information: "",
+    url: "https://mail.google.com"
   },
   {
     styleCart: "icon__social",
     imgCheck: gmail,
     information: "",
+    url: "https://mail.google.com"
   },
 ];
 </script>

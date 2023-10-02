@@ -2,62 +2,47 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-column: 2;
+    grid-row: 2;
 
     @include tablet {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        width: 100vw;
-        height: 15vh;
+        grid-template-rows: 1fr;
+        width: 100%;
+        height: auto;
         justify-self: center;
+        grid-column: 2;
+        grid-row: 2;
+
     }
 
     @include movil {
         display: grid;
         grid-template-columns: 160px 205px;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
         width: 100%;
-        height: 16vh;
+        height: auto;
         justify-content: center;
-        margin-top: 15px;
     }
 
     .avion {
-        width: 115px;
-        height: 115px;
+        width: 170px;
+        height: 170px;
         grid-column: 2;
         grid-row: 2;
         opacity: 0.3;
-        place-self: first baseline;
+        place-self: center;
 
         @include tablet {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
         }
 
         @include movil {
             display: grid;
             place-self: center;
-        }
-    }
-
-    .container__item {
-        grid-column: 2;
-        grid-row: 1;
-
-        h5 {
-            font-family: $fuente-cursiva;
-            color: $Black;
-            font-size: 25px;
-
-            @include tablet {
-                font-size: 18px;
-            }
-
-            @include movil {
-                font-size: 18px;
-                font-weight: inherit;
-                color: $Black;
-            }
+            width: 110px;
+            height: 110px;
         }
     }
 
@@ -67,10 +52,19 @@
 
         .info__style {
             display: grid;
-            grid-template-columns: 130px 40px;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+
+            @include tablet {
+                display: grid;
+                grid-template-columns: 165px 25px;
+            }
+
+            @include movil {
+                grid-template-columns: 150px 30px;
+            }
 
             img {
                 width: 30px;
@@ -81,7 +75,7 @@
 
             p {
                 font-family: $fuente-cursiva;
-                font-size: 20px;
+                font-size: 23px;
                 grid-column: 1;
                 text-align: justify;
                 color: $Black;
@@ -89,87 +83,3 @@
         }
     }
 }
-
-// .container-items {
-//     display: grid;
-//     grid-template-columns: 165px 181px;
-//     grid-template-rows: 1fr 1fr;
-//     width: 360px;
-//     height: 25vh;
-//     margin-top: -23px;
-
-//     @include tablet {
-//         grid-template-columns: 220px 270px;
-//         grid-template-rows: 70px 120px;
-//         width: 480px;
-//         height: 35vh;
-//         margin-top: -27px;
-//     }
-
-//     .avion {
-//         width: 80px;
-//         height: 80px;
-//         object-fit: cover;
-//         grid-column: 2;
-//         grid-row: 2;
-//         display: grid;
-//         place-self: center;
-//         opacity: 0.3;
-
-//         @include tablet {
-//             width: 120px;
-//             height: 120px;
-//         }
-//     }
-
-//     .container__item {
-//         grid-column: 2;
-//         grid-row: 1;
-//         width: 240px;
-
-//         h5 {
-//             font-family: $fuente-cursiva;
-//             color: $Black;
-//             font-size: 20px;
-//             font-weight: inherit;
-//             color: $Black;
-
-//             @include tablet {
-//                 width: 120px;
-//                 height: 120px;
-//                 width: 249px;
-//             }
-//         }
-//     }
-
-//     .container__card {
-//         grid-column: 1;
-//         grid-row: 2;
-//         padding-left: 10px;
-
-//         .info__style {
-//             display: grid;
-//             grid-template-columns: 130px 40px;
-//             grid-template-rows: 1fr;
-//             width: 190px;
-//             justify-content: center;
-//             align-items: center;
-//             padding: 5px;
-
-//             img {
-//                 width: 30px;
-//                 height: 30px;
-//                 grid-row: 1;
-//                 grid-column: 2;
-//             }
-
-//             p {
-//                 font-family: $fuente-cursiva;
-//                 font-size: 18px;
-//                 grid-column: 1;
-//                 text-align: justify;
-//                 color: $Black;
-//             }
-//         }
-//     }
-// }

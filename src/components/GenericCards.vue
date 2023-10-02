@@ -1,6 +1,6 @@
 <template>
   <div :class="styleCart">
-    <img :src="imgCheck" alt="" />
+    <img :src="imgCheck" alt=""/>
     <p>{{ information }}</p>
   </div>
 </template>

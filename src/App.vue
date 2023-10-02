@@ -6,7 +6,7 @@ import IconSocial from "./components/IconSocial.vue";
 </script>
 
 <template>
-  <div>
+  <div class="wrapper">
     <Header />
     <CartsInfo />
     <IconSocial />
@@ -15,5 +15,5 @@ import IconSocial from "./components/IconSocial.vue";
 </template>
 
 <style lang="sass">
-
-</style>  
+@import "@sass/importComponent.scss"
+</style>

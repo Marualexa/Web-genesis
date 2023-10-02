@@ -4,19 +4,21 @@
     <v-carousel v-model="model">
       <v-carousel-item v-for="(item, i) in items" :key="i" :value="i">
         <v-sheet height="55%" tile>
-          <div class="d-flex fill-height justify-center align-center">
+          <div class="d-flex-item fill-height">
             <div class="text">
               <v-card class="items">
-                <p class="mt-4 font-weight-bold mb-3" align="center" justify="center">
-                  {{ item.name }}
-                </p>
-                <p text="justify" class="ml-3 mr-3 $fuentes-p">
-                  {{ item.message }}
-                </p>
+                <div class="v-card-wrapper">
+                  <p class="mt-4 font-weight-bold mb-3" align="center" justify="center">
+                    {{ item.name }}
+                  </p>
+                  <p text="justify" class="ml-3 mr-3 $fuentes-p v-card-text-info">
+                    {{ item.message }}
+                  </p>
 
-                <div class="img-inf">
-                  <img class="est" src="@img/estrellas.png" alt="" />
-                  <img src="@img/icon.svg" alt="" />
+                  <div class="img-inf">
+                    <img class="est" src="@img/estrellas.png" alt="" />
+                    <img src="@img/icon.svg" alt="" />
+                  </div>
                 </div>
               </v-card>
             </div>
