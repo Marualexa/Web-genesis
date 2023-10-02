@@ -24,11 +24,11 @@ $color-4: #FFF0F5;
     grid-template-rows: 400px 250px 240px 400px;
 }
 // diseño movil
-@media screen and (min-width: 380px) and (max-width: 670px) {
+@media screen and (min-width: 300px) and (max-width: 670px) {
     .wrapper {
         display: grid;
         grid-template-columns: 0fr 1fr 0fr;
-        grid-template-rows: 250px 150px 350px 200px;
+        grid-template-rows: 250px 145px 350px 200px;
     }
 }
 
@@ -36,14 +36,14 @@ $color-4: #FFF0F5;
     .wrapper {
         display: grid;
         grid-template-columns: 10.5fr 70fr 10.5fr;
-        grid-template-rows: 350px 150px 205px 320px;
+        grid-template-rows: 350px 200px 205px 320px;
     }
 }
 
 
 
 @mixin movil {
-    @media screen and (min-width: 380px) and (max-width: 570px) {
+    @media screen and (min-width: 300px) and (max-width: 670px) {
         @content;
     }
 }
