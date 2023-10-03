@@ -8,7 +8,7 @@
       <img class="perfel" src="@img/perfil.jpeg" alt="" />
     </div>
     <div class="main__info">
-      <h1>Genesis Suarez</h1>
+      <h1>Génesis Suárez</h1>
     </div>
     <p>Contenido viajero, mucha conexión y diversión</p>
   </main>

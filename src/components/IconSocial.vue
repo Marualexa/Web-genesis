@@ -2,14 +2,18 @@
   <div class="icon-social">
     <p>El mejor vieje comienza adentro</p>
     <div class="container__card">
-      <Generic
+      <a
         v-for="(item, index) in items"
         :key="index"
-        :styleCart="item.styleCart"
-        :imgCheck="item.imgCheck"
-        :information="item.information"
-        :url="url"
-      />
+        :href="item.link"
+        target="_blank"
+      >
+        <Generic
+          :styleCart="item.styleCart"
+          :imgCheck="item.imgCheck"
+          :information="item.information"
+        />
+      </a>
     </div>
   </div>
 </template>
@@ -26,25 +30,25 @@ const items = [
     styleCart: "icon__social",
     imgCheck: instagram,
     information: "",
-    url: "https://mail.google.com"
+    link: "https://instagram.com/enmarchagenesis?igshid=MzMyNGUyNmU2YQ=="
   },
   {
     styleCart: "icon__social",
     imgCheck: whatsapp,
     information: "",
-    url: "https://mail.google.com"
+    link: "https://wa.me/message/VZRUVHISBWXFA1"
   },
   {
     styleCart: "icon__social",
     imgCheck: Spotify,
     information: "",
-    url: "https://mail.google.com"
+    link: ""
   },
   {
     styleCart: "icon__social",
     imgCheck: gmail,
     information: "",
-    url: "https://mail.google.com"
+    link: ""
   },
 ];
 </script>
