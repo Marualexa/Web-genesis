@@ -86,7 +86,7 @@
 
                 .v-card-text-info {
                     font-size: 21px;
-                    
+
                     @include movil {
                         overflow-y: hidden;
                         font-size: 17px;
@@ -119,10 +119,11 @@
                 }
 
                 img {
-                    width: 30px;
-                    height: 30px;
+                    width: 35px;
+                    height: 35px;
                     object-fit: contain;
                     grid-column: 2;
+                    border-radius: 50%;
                 }
             }
 
