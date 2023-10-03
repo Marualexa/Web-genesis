@@ -45,21 +45,36 @@
             grid-gap: 20px;
         }
 
-        .icon__social {
-            display: grid;
-            border-radius: 20px;
-            background: $color-3;
-            box-shadow: 5px 0 5px $color-3,
-                7px 20px 60px $White;
-            padding: 13px;
-            width: 190px;
+        a {
+            text-decoration: none;
+            color: inherit;
 
-            img {
-                width: 35px;
-                height: 35px;
-                object-fit: cover;
+            .icon__social {
                 display: grid;
+                grid-auto-columns: 1fr 1fr;
+                border-radius: 20px;
+                justify-content: center;
+                align-items: center;
+                background: $color-3;
+                box-shadow: 5px 0 5px $color-3,
+                    7px 20px 60px $White;
+                padding: 13px;
+                width: 180px;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    object-fit: cover;
+                    grid-column: 1;
+                }
+
+                p {
+                    grid-column: 2;
+                    font-family: $fuente-cursiva;
+                    text-align: center;
+                }
             }
         }
+
     }
 }

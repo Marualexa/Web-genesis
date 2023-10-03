@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <div class="fondo">
-      <img class="fondo_img" src="@img/fondo.jpeg" alt="">
+      <img class="fondo_img" src="@img/fondo.jpeg" alt="" />
     </div>
 
     <div class="main__img">
@@ -10,7 +10,10 @@
     <div class="main__info">
       <h1>Génesis Suárez</h1>
     </div>
-    <p>Contenido viajero, mucha conexión y diversión</p>
+    <p>
+      Profesional Argent Travel. Hago contenido viajero, ✨Aquí✨mucha conexión y
+      diversión
+    </p>
   </main>
 </template>
 

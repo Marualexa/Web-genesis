@@ -22,32 +22,32 @@
 import Generic from "./GenericCards.vue";
 import instagram from "@img/instagram.png";
 import whatsapp from "@img/whatsapp.png";
-import Spotify from "@img/Spotify.svg";
+import spotify from "@img/Spotify.svg";
 import gmail from "@img/gmail.png";
 
 const items = [
   {
     styleCart: "icon__social",
     imgCheck: instagram,
-    information: "",
+    information: "Instagram",
     link: "https://instagram.com/enmarchagenesis?igshid=MzMyNGUyNmU2YQ=="
   },
   {
     styleCart: "icon__social",
     imgCheck: whatsapp,
-    information: "",
+    information: "WhatsApp",
     link: "https://wa.me/message/VZRUVHISBWXFA1"
   },
   {
     styleCart: "icon__social",
-    imgCheck: Spotify,
-    information: "",
+    imgCheck: spotify,
+    information: "Intenciones podcast",
     link: ""
   },
   {
     styleCart: "icon__social",
     imgCheck: gmail,
-    information: "",
+    information: "Gmail",
     link: ""
   },
 ];
