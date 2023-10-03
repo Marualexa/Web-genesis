@@ -36,7 +36,6 @@
 
     .v-carousel__controls {
         display: none;
-        margin: 20px;
     }
 
     .d-flex-item {
@@ -56,7 +55,6 @@
                 height: 270px;
                 background: #FFD1DA;
                 box-shadow: 5px 0 5px #FFD1DA, 7px 20px 60px #fff;
-                padding: 30px;
 
                 @include movil {
                     width: 290px;
@@ -80,7 +78,7 @@
                     @include movil {
                         display: grid;
                         grid-auto-columns: 1fr 1fr;
-                        grid-auto-rows: auto 95px auto;
+                        grid-auto-rows: auto 105px 45px;
                         grid-gap: 0;
                     }
                 }
@@ -91,6 +89,7 @@
                     
                     @include movil {
                         overflow-y: hidden;
+                        font-size: 17px;
                     }
                 }
             }
@@ -102,7 +101,7 @@
                 overflow-x: hidden;
 
                 @include movil {
-                    font-size: 17px;
+                    font-size: 18px;
                 }
             }
 
