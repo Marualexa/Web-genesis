@@ -42,7 +42,7 @@ const items = [
     styleCart: "icon__social",
     imgCheck: spotify,
     information: "Intenciones podcast",
-    link: ""
+    link: "https://podcasters.spotify.com/pod/show/intencionespodcast"
   },
   {
     styleCart: "icon__social",

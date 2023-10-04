@@ -11,8 +11,7 @@
       <h1>Génesis Suárez</h1>
     </div>
     <p>
-      Profesional Argent Travel. Hago contenido viajero, ✨Aquí✨mucha conexión y
-      diversión
+      Profesional Argent Travel. Hago contenido viajero,✨aquí✨encontrarás mucha conexión y diversión
     </p>
   </main>
 </template>
