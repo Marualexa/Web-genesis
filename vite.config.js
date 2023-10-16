@@ -4,14 +4,8 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/Web-genesis/',
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@import "@/sass/importGlobal.scss";`
-  //     }
-  //   }
-  // },
+  base: '/travel/',
+
   resolve: {
     alias: {
       '@img': fileURLToPath(new URL('src/assets/', import.meta.url)), 
