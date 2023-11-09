@@ -8,9 +8,14 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@img': fileURLToPath(new URL('src/assets/', import.meta.url)), 
-      '@sass': fileURLToPath(new URL('src/sass/', import.meta.url)), 
+      '@img': fileURLToPath(new URL('src/assets/', import.meta.url)),
+      '@sass': fileURLToPath(new URL('src/sass/', import.meta.url)),
       '@': fileURLToPath(new URL('src/', import.meta.url)),
+    },
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => ['v-data-table'].includes(tag),
+      }
     }
   },
 })

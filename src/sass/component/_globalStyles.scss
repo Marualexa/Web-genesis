@@ -21,14 +21,14 @@ $color-4: #FFF0F5;
 .wrapper {
     display: grid;
     grid-template-columns: 12.5fr 75fr 12.5fr;
-    grid-template-rows: 400px 250px 240px 400px;
+    grid-template-rows: 400px 290px 295px 400px;
 }
 // diseño movil
 @media screen and (min-width: 300px) and (max-width: 670px) {
     .wrapper {
         display: grid;
         grid-template-columns: 0fr 1fr 0fr;
-        grid-template-rows: 250px 180px 380px 200px;
+        grid-template-rows: 250px 210px 380px 200px;
     }
 }
 
@@ -36,7 +36,7 @@ $color-4: #FFF0F5;
     .wrapper {
         display: grid;
         grid-template-columns: 10.5fr 70fr 10.5fr;
-        grid-template-rows: 445px 225px 275px 320px;
+        grid-template-rows: 380px 295px 275px 320px;
     }
 }
 

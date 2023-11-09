@@ -1,0 +1,216 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "userRegist": [
+    {
+      "id": 1,
+      "nombreApellido": "Mariana Contreras",
+      "email": "conhaja@gmail.com",
+      "genero": "femenino",
+      "numeroTelefonico": "302576437",
+      "ciudadOrigen": "djdsh",
+      "ciudadDestino": "sdhk",
+      "tipoViaje": "sklal",
+      "fechaSalida": "zjksakj",
+      "fechaRegreso": "suika",
+      "recibirCotizacion": "AiaUJ"
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "genero": "masculino",
+      "numeroTelefonico": "213123122",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "WhatsApp",
+      "id": 2
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "genero": "masculino",
+      "numeroTelefonico": "213123122",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "WhatsApp",
+      "id": 3
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "genero": "masculino",
+      "numeroTelefonico": "213123122",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 4
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "numeroTelefonico": "213123122",
+      "genero": "masculino",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 5
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "numeroTelefonico": "213123122",
+      "genero": "masculino",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 6
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "numeroTelefonico": "213123122",
+      "genero": "masculino",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 7
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "numeroTelefonico": "213123122",
+      "genero": "masculino",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 8
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "numeroTelefonico": "213123122",
+      "genero": "masculino",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 9
+    },
+    {
+      "nombreApellido": "dasd",
+      "email": "test@test.com",
+      "numeroTelefonico": "213123122",
+      "genero": "masculino",
+      "ciudadOrigen": "dsads",
+      "ciudadDestino": "dasdsa",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-10-27",
+      "fechaRegreso": "2023-10-28",
+      "recibirCotizacion": "WhatsApp",
+      "id": 10
+    },
+    {
+      "nombreApellido": "hakhsk",
+      "email": "conhaja@gmail.com",
+      "numeroTelefonico": 30267662,
+      "genero": "masculino",
+      "ciudadOrigen": "ksdjkds",
+      "ciudadDestino": "dskjdsj",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "WhatsApp",
+      "id": 11
+    },
+    {
+      "nombreApellido": "gfdgd",
+      "email": "fffggf@gmail.com",
+      "numeroTelefonico": 282882800,
+      "genero": "masculino",
+      "ciudadOrigen": "sdkjsdjds",
+      "ciudadDestino": "djkdsjkdjkds",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "WhatsApp",
+      "id": 12
+    },
+    {
+      "nombreApellido": "hhyhyhy",
+      "email": "consy@gmail.com",
+      "numeroTelefonico": 3626627,
+      "genero": "masculino",
+      "ciudadOrigen": "dhdyhd",
+      "ciudadDestino": "dkldskds",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "Correo Electrónico",
+      "id": 13
+    },
+    {
+      "nombreApellido": "sakshhask",
+      "email": "sjsjks@gmail.com",
+      "numeroTelefonico": 17726272,
+      "genero": "masculino",
+      "ciudadOrigen": "zjshiakas",
+      "ciudadDestino": "assahkhas",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "WhatsApp",
+      "id": 14
+    },
+    {
+      "nombreApellido": "hnnhfgg",
+      "email": "name@gmail.com",
+      "numeroTelefonico": 30827772,
+      "genero": "masculino",
+      "ciudadOrigen": "sdhjdshds",
+      "ciudadDestino": "skdjdldsj",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "WhatsApp",
+      "id": 15
+    }
+  ]
+}

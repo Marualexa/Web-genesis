@@ -1,6 +1,6 @@
 <template>
   <div class="icon-social">
-    <p>El mejor vieje comienza adentro</p>
+    <p>El mejor viaje comienza adentro</p>
     <div class="container__card">
       <a
         v-for="(item, index) in items"
@@ -40,15 +40,15 @@ const items = [
   },
   {
     styleCart: "icon__social",
-    imgCheck: spotify,
-    information: "Intenciones podcast",
-    link: "https://podcasters.spotify.com/pod/show/intencionespodcast"
-  },
-  {
-    styleCart: "icon__social",
     imgCheck: gmail,
     information: "Gmail",
     link: ""
+  },
+  {
+    styleCart: "icon__social-spo",
+    imgCheck: spotify,
+    information: "Intenciones podcast",
+    link: "https://podcasters.spotify.com/pod/show/intencionespodcast"
   },
 ];
 </script>

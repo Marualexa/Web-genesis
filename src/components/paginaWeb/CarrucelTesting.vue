@@ -45,12 +45,12 @@
 </template>
 
 <script>
-import jonatan from "../assets/Jhonatan.jpeg";
-import angie from "../assets/Angie.jpeg";
-import paula from "../assets/Paula.jpeg";
-import ivonne from "../assets/Ivonne.jpeg";
-import drenk from "../assets/Drenk.jpeg";
-import icon from "../assets/icon.svg";
+import jonatan from "../../assets/Jhonatan.jpeg";
+import angie from "../../assets/Angie.jpeg";
+import paula from "../../assets/Paula.jpeg";
+import ivonne from "../../assets/Ivonne.jpeg";
+import drenk from "../../assets/Drenk.jpeg";
+import icon from "../../assets/icon.svg";
 export default {
   data() {
     return {
@@ -63,7 +63,7 @@ export default {
         {
           name: "Angie Bautista",
           message:
-            "La mejor siempre, todo lo relacionado con vuelo, ella siempre es la mejor.",
+            "La mejor siempre, todo lo relacionado con vuelos, ella siempre es la mejor.",
           imageSrc: angie,
         },
         {

@@ -1,0 +1,57 @@
+.input {
+    width: 100%;
+    min-height: 320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". input1 input2 ."
+        ". input3 input4 ."
+        ". date date ."
+        ". button button ."
+    ;
+
+    .input-search {
+        grid-area: input1;
+        height: 35px;
+        margin-right: 10px;
+        border-radius: 10px;
+        padding-left: 10px;
+        width: 312px;
+    }
+
+    .number-phone {
+        grid-area: input2;
+        height: 35px;
+        padding-left: 10px;
+        width: 312px;
+    }
+
+    .detail {
+        grid-area: input3;
+        height: 35px;
+        margin-right: 10px;
+        background-color: white;
+        padding-left: 10px;
+        width: 312px;
+    }
+
+    .select-viaje {
+        grid-area: input4;
+        height: 35px;
+        background-color: white;
+        padding-left: 10px;
+        width: 312px;
+    }
+
+    .date {
+        grid-area: date;
+    }
+
+    .btn {
+        grid-area: button;
+        display: grid;
+        align-self: center;
+        width: 130px;
+    }
+}
