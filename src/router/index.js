@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     { path: '/Web-genesis/', name: 'ImportApp', component: () => import('../components/ImportApp.vue') },
     { path: '/Web-genesis/addFormy/', name: 'form', component: () => import('../components/formularioDeRegistro/AddForm.vue') },
