@@ -1,16 +1,14 @@
 <template>
   <div class="text-center">
-    <v-parallax>
-      <v-progress-circular
-        :rotate="360"
-        :size="100"
-        :width="15"
-        :model-value="value"
-        color="teal"
-      >
-        {{ value }}
-      </v-progress-circular>
-    </v-parallax>
+    <v-progress-circular
+      :rotate="360"
+      :size="100"
+      :width="15"
+      :model-value="value"
+      color="teal"
+    >
+      {{ value }}
+    </v-progress-circular>
   </div>
 </template>
 

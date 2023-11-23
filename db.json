@@ -211,6 +211,45 @@
       "fechaRegreso": null,
       "recibirCotizacion": "WhatsApp",
       "id": 15
+    },
+    {
+      "nombreApellido": "Mariana Contreras",
+      "email": "contrerasomanam@gmail.com",
+      "numeroTelefonico": 3027748200,
+      "genero": "masculino",
+      "ciudadOrigen": "Colombia",
+      "ciudadDestino": "Cali",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-11-17",
+      "fechaRegreso": "2023-12-01",
+      "recibirCotizacion": "Correo Electrónico",
+      "id": 16
+    },
+    {
+      "nombreApellido": "Mariana Contreras",
+      "email": "contrerasomanam@gmail.com",
+      "numeroTelefonico": 3027748200,
+      "genero": "masculino",
+      "ciudadOrigen": "Colombia",
+      "ciudadDestino": "Cali",
+      "tipoViaje": "Viaje de ida y vuelta",
+      "fechaSalida": "2023-11-16",
+      "fechaRegreso": "2023-12-07",
+      "recibirCotizacion": "WhatsApp",
+      "id": 17
+    },
+    {
+      "nombreApellido": "Joel Suarez",
+      "email": "joelsuarez.1101@gmail.com",
+      "numeroTelefonico": 3121567234,
+      "genero": "masculino",
+      "ciudadOrigen": "Colombia",
+      "ciudadDestino": "Mexico",
+      "tipoViaje": "Viaje de ida",
+      "fechaSalida": null,
+      "fechaRegreso": null,
+      "recibirCotizacion": "Correo Electrónico",
+      "id": 18
     }
   ]
 }

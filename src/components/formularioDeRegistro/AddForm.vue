@@ -2,6 +2,7 @@
   <ProgressCircular v-if="loadModule && !errorData" />
   <ModelError v-if="errorData && !loadModule" />
   <ModeOfRegis v-if="exictReg && !errorData" />
+  <Conditional v-if="showModal" @accept-terms="itemsCloset" />
   <header class="arrow">
     <img
       @click="closetForm"
@@ -15,7 +16,7 @@
   <div class="container-add">
     <p style="font-size: 18px; text-align: center">Formulario de cotización</p>
 
-    <form @submit.prevent="createButton" class="row g-3">
+    <form @submit.prevent="createButton" class="row g-3" style="padding: 15px">
       <p style="font-size: 16px">1.INFORMACIÓN DEL PAJAJERO</p>
 
       <div class="col-md-6">
@@ -189,6 +190,39 @@
         </div>
       </div>
 
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          v-model="data.description"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea2">Descripción del viaje</label>
+      </div>
+
+      <div class="button__container">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="btnModalOpen"
+          v-model="data.conditional"
+          :class="{ 'is-invalid': hasError('conditional') }"
+        />
+
+        <label
+          @click="toggleConditional"
+          class="form-check-label"
+          for="btnModalOpen"
+          style="margin-left: 15px"
+        >
+          Leer términos y condiciones
+        </label>
+        <div v-if="hasError('conditional')" class="invalid-feedback">
+          {{ errorObject.errorMessage }}
+        </div>
+      </div>
+
       <div style="margin-top: 30px; display: grid; justify-items: center" class="col-12">
         <button type="submit" class="btn btn-success">Registrar</button>
       </div>
@@ -204,27 +238,31 @@ import { useRouter } from "vue-router";
 import ProgressCircular from "../Modales/ProgressCircular.vue";
 import ModelError from "../Modales/ModelError.vue";
 import ModeOfRegis from "../Modales/ModeOfRegis.vue";
+import Conditional from "../Modales/Conditional.vue";
 
-const { makeRequest, errorData } = useAsync();
+const { makeRequest, errorData, appStatus } = useAsync();
 const router = useRouter();
 const loadModule = ref(false);
 const exictReg = ref(false);
+const showModal = ref(false);
 
 function closetForm() {
   router.push({ name: "ImportApp" });
 }
 
 const data = reactive({
-  nombreApellido: "",
-  email: "",
-  numeroTelefonico: "",
+  nombreApellido: "dasd",
+  email: "test@test.com",
+  numeroTelefonico: "213123122",
   genero: "masculino",
-  ciudadOrigen: "",
-  ciudadDestino: "",
+  ciudadOrigen: "dsadsq",
+  ciudadDestino: "dsads",
   tipoViaje: "Viaje de ida",
-  fechaSalida: null,
-  fechaRegreso: null,
+  fechaSalida: "2023-01-01 10:30:50",
+  fechaRegreso: "2023-01-01 10:30:50",
   recibirCotizacion: "WhatsApp",
+  description: "Description",
+  conditional: false,
 });
 
 const formData = {
@@ -238,6 +276,8 @@ const formData = {
   fechaSalida: Joi.date().iso().optional().allow(null),
   fechaRegreso: Joi.date().iso().optional().allow(null),
   recibirCotizacion: Joi.string().valid("WhatsApp", "Correo Electrónico").required(),
+  description: Joi.string().required(),
+  conditional: Joi.boolean().valid(true).required(),
 };
 
 const errorObject = reactive({
@@ -251,9 +291,35 @@ const hasError = computed(() => {
   };
 });
 
+function toggleConditional() {
+  showModal.value = true;
+}
+
+const itemsCloset = () => {
+  showModal.value = false;
+  data.conditional = true;
+};
+
+let current_datetime = new Date();
+
+let formatted_date =
+  current_datetime.getFullYear() +
+  "-" +
+  (current_datetime.getMonth() + 1) +
+  "-" +
+  current_datetime.getDate() +
+  " " +
+  current_datetime.getHours() +
+  ":" +
+  current_datetime.getMinutes() +
+  ":" +
+  current_datetime.getSeconds();
+
 function createButton() {
+  console.log("validation");
   const resultFrom = Joi.validate(data, formData, async (err, value) => {
     if (err) {
+      console.log("error");
       let starForm = err.message;
       let starIndex = starForm.indexOf("[") + 1;
       let endIndex = starForm.indexOf("]");
@@ -268,9 +334,16 @@ function createButton() {
 
       errorObject.errorName = final;
       errorObject.errorMessage = final + " " + messageIndix;
+      console.log("error mensaje", final);
+      console.log("condional", data.conditional);
     } else {
       loadModule.value = true;
-      await makeRequest("userRegist", {}, "POST", {
+      let tokenAccess = localStorage.getItem("MyToken");
+      await makeRequest("information-request/create", { token: tokenAccess }, "POST", {
+        Bank: "1",
+        Category: "1",
+        Title: "quote",
+        DateTransaction: formatted_date,
         nombreApellido: data.nombreApellido,
         email: data.email,
         numeroTelefonico: data.numeroTelefonico,
@@ -281,7 +354,10 @@ function createButton() {
         fechaSalida: data.fechaSalida,
         fechaRegreso: data.fechaRegreso,
         recibirCotizacion: data.recibirCotizacion,
+        Description: data.description,
+        conditional: data.conditional,
       });
+      console.log("status", appStatus.value);
       data.nombreApellido = "";
       data.email = "";
       data.numeroTelefonico = "";
@@ -292,6 +368,8 @@ function createButton() {
       data.fechaSalida = "";
       data.fechaRegreso = "";
       data.recibirCotizacion = "";
+      data.description = "";
+      data.conditional = "";
       loadModule.value = false;
       exictReg.value = true;
     }

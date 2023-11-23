@@ -2,7 +2,8 @@ import { ref } from "vue";
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:3000/",
+    // baseURL: "http://localhost:3000/",
+    baseURL: import.meta.env.VITE_APP_BASEURL,
     headers: {
         "Content-Type": "application/json;charset=utf-8",
     },
@@ -33,8 +34,7 @@ export function useAsync() {
         } catch (error) {
             isLoading.value = false;
             errorData.value = error;
-            appStatus.value = 404;
-            throw error;
+            appStatus.value = 401;
         }
     };
 
