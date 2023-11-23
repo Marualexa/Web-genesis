@@ -1,6 +1,6 @@
 <template>
-  <!-- <ProgressCircular v-if="isLoading && !errorData" />
-  <ModelError v-if="errorData && !isLoading" /> -->
+  <ProgressCircular v-if="isLoading && !errorData" />
+  <ModelError v-if="errorData && !isLoading" />
   <div class="model-user">
     <v-card
       class="modal__container d-flex flex-column fill-height justify-center align-center text-white"

@@ -251,17 +251,17 @@ function closetForm() {
 }
 
 const data = reactive({
-  nombreApellido: "dasd",
-  email: "test@test.com",
-  numeroTelefonico: "213123122",
-  genero: "masculino",
-  ciudadOrigen: "dsadsq",
-  ciudadDestino: "dsads",
+  nombreApellido: "",
+  email: "",
+  numeroTelefonico: "",
+  genero: "",
+  ciudadOrigen: "",
+  ciudadDestino: "",
   tipoViaje: "Viaje de ida",
-  fechaSalida: "2023-01-01 10:30:50",
-  fechaRegreso: "2023-01-01 10:30:50",
+  fechaSalida: "",
+  fechaRegreso: "",
   recibirCotizacion: "WhatsApp",
-  description: "Description",
+  description: "",
   conditional: false,
 });
 

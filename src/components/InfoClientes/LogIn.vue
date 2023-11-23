@@ -59,8 +59,8 @@ isLoading.value = false
 const router = useRouter();
 
 const user = reactive({
-  email: "joell@test.co",
-  password: "k2m=@[7C!sQX",
+  email: "",
+  password: "",
 });
 
 const errorObject = reactive({
