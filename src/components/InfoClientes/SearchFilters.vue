@@ -1,35 +1,36 @@
 <template>
+  <ProgressCircular v-if="loadModule && !errorData" />
+  <ModelError v-if="errorData && !loadModule" />
   <div class="input">
-    <div class="col-md-6 input-search">
-      <label for="formGroupExampleInput" class="form-label">Nombre y Apellido</label>
+    <div class="col input-search">
+      <label for="formGroupExampleInput2" class="form-label">Nombre y Apellido</label>
       <input
         type="text"
+        class="form-control"
         v-model="filters.nombreApellido"
         :class="{ 'is-invalid': hasError('nombreApellido') }"
-        class="input-search"
-        style="border: 1px solid"
-        id="formGroupExampleInput"
       />
       <div v-if="hasError('nombreApellido')" class="invalid-feedback">
         {{ errorObject.errorMessage }}
       </div>
     </div>
 
-    <div class="col-md-6 number-phone">
-      <label for="formGroupExampleInput2" class="form-label">Fecha y Hora de solicitud</label>
+    <div class="col number-phone">
+      <label for="formGroupExampleInput2" class="form-label"
+        >Fecha y Hora de solicitud</label
+      >
       <input
         type="date"
-        style="border: 1px solid"
+        class="form-control"
         v-model="filters.DateTransaction"
         :class="{ 'is-invalid': hasError('DateTransaction') }"
-        class="input-search"
       />
       <div v-if="hasError('DateTransaction')" class="invalid-feedback">
         {{ errorObject.errorMessage }}
       </div>
     </div>
 
-    <div class="col-md-6 detail">
+    <div class="col detail">
       <label for="recibirCotizacion" class="form-label">Información de cotización</label>
       <select
         id="recibirCotizacion"
@@ -45,7 +46,7 @@
       </div>
     </div>
 
-    <div class="col-md-6 select-viaje">
+    <div class="col select-viaje">
       <label for="recibirCotizacion" class="form-label">Selecciona tipo de viaje</label>
       <select
         id="recibirCotizacion"
@@ -66,13 +67,11 @@
       class="row date"
       v-if="filters.tipoViaje === 'Viaje de ida y vuelta'"
     >
-      <div class="col-md-6">
+      <div class="col">
         <label for="fechaSalida" class="form-label">FECHA DE SALIDA</label>
         <input
           type="date"
           class="form-control"
-          style="border: 1px solid"
-          id="fechaSalida"
           v-model="filters.fechaSalida"
           :class="{ 'is-invalid': hasError('fechaSalida') }"
         />
@@ -81,13 +80,11 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col">
         <label for="fechaRegreso" class="form-label">FECHA DE REGRESO</label>
         <input
           type="date"
           class="form-control"
-          style="border: 1px solid"
-          id="fechaRegreso"
           v-model="filters.fechaRegreso"
           :class="{ 'is-invalid': hasError('fechaRegreso') }"
         />
@@ -102,10 +99,16 @@
 </template>
 
 <script setup>
-import { reactive, computed, defineEmits } from "vue";
+import { reactive, computed, defineEmits, ref } from "vue";
 import { Joi } from "vue-joi-validation";
+import ProgressCircular from "../Modales/ProgressCircular.vue";
+import ModelError from "../Modales/ModelError.vue";
+import { useAsync } from "../../hooks/useAsync";
 
-const emit = defineEmits();
+const { errorData } = useAsync();
+const loadModule = ref(false);
+
+const emit = defineEmits(['validSuccessful'])
 
 const filters = reactive({
   nombreApellido: "",
@@ -118,9 +121,15 @@ const filters = reactive({
 
 const validateItems = {
   nombreApellido: Joi.string().optional().allow(""),
-  DateTransaction: Joi.date().iso().optional().allow(null),
-  recibirCotizacion: Joi.string().valid("WhatsApp", "Correo Electrónico").optional().allow(""),
-  tipoViaje: Joi.string().valid("Viaje de ida", "Viaje de ida y vuelta").optional().allow(""),
+  DateTransaction: Joi.date().iso().optional().allow(""),
+  recibirCotizacion: Joi.string()
+    .valid("WhatsApp", "Correo Electrónico")
+    .optional()
+    .allow(""),
+  tipoViaje: Joi.string()
+    .valid("Viaje de ida", "Viaje de ida y vuelta")
+    .optional()
+    .allow(""),
   fechaSalida: Joi.date().iso().optional().allow(null),
   fechaRegreso: Joi.date().iso().optional().allow(null),
 };
@@ -154,8 +163,8 @@ function searchFilt() {
       errorObject.errorName = final;
       errorObject.errorMessage = final + " " + messageIndix;
     } else {
-      console.log("Que llega", filters)
-      emit("valiSuccessful", filters);
+      console.log("Que llega", filters);
+      emit("validSuccessful", filters);
     }
   });
 }

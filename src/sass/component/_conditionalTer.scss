@@ -9,11 +9,11 @@
     z-index: 10;
 
     .modal__container {
-        height: 300px !important;
+        height: 630px !important;
     }
 
     div {
-        width: 410px;
+        width: 500px;
         background-color: $color-1;
     }
 
@@ -22,6 +22,7 @@
         color: $Black;
         font-size: 18px;
         text-align: justify;
+        width: 465px;
     }
 
     button {

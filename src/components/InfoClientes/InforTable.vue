@@ -1,10 +1,10 @@
 <template>
   <ProgressCircular v-if="isLoading && !errorData" />
   <ModelError v-if="errorData && !isLoading" />
-  <InfoUser v-show="showItems" :updateOfId="updateOfId" @closet-model="closeModal" />
+  <InfoUser v-show="showItems" @closet-model="closetModal" />
   <div class="container-info">
     <p>Información de cliente para cotización</p>
-    <SearchFilters @vali-successful="handleSuccessful" />
+    <SearchFilters @valid-successful="(filters) => handleSuccessful(filters)" />
     <table class="table" style="width: 100vw">
       <thead>
         <tr style="text-align: center">
@@ -22,14 +22,14 @@
           <td>{{ cliente.genero }}</td>
           <td>{{ dateFormat(cliente.DateTransaction) }}</td>
           <td>
-            <v-btn @click="(ev) => detailUser(cliente.id)"
+            <v-btn @click="(ev) => detailUser(cliente.Uid)"
               ><img src="../../assets/eye.svg" alt=""
             /></v-btn>
           </td>
         </tr>
       </tbody>
     </table>
-    <PageNumber @page-event="eventButton" />
+    <!-- <PageNumber @page-event="eventButton" /> -->
   </div>
 </template>
 
@@ -38,29 +38,24 @@ import { ref, onMounted, watch, provide } from "vue";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { useAsync } from "../../hooks/useAsync";
-import PageNumber from "./PageNumber.vue";
+// import PageNumber from "./PageNumber.vue";
 import ProgressCircular from "../Modales/ProgressCircular.vue";
 import ModelError from "../Modales/ModelError.vue";
 import InfoUser from "./InfoUser.vue";
 import SearchFilters from "./SearchFilters.vue";
+import { useCartStore } from "../../store/cartContainer";
 
+const store = useCartStore();
 const { result, makeRequest, errorData, isLoading } = useAsync();
-const resultData = ref(null);
+// const resultData = ref(null);
 // const page = ref("1");
 // const limit = ref("5");
 const nombreApellido = ref("");
 const email = ref("");
 const DateTransaction = ref();
 const genero = ref();
-const stringLimit = ref("5");
+// const stringLimit = ref("5");
 const showItems = ref(false);
-const updateOfId = ref(null);
-
-function handleSuccessful(param) {
-  if (param) {
-    respuesta(param);
-  }
-}
 
 const clientes = ref([
   {
@@ -83,10 +78,12 @@ const respuesta = async (param = {}) => {
     let tokenAccess = localStorage.getItem("MyToken");
     let queryParams = {};
 
-    if (nombreApellido.value) queryParams.nombreApellido = nombreApellido.value;
-    if (email.value) queryParams.email = email.value;
-    if (DateTransaction.value) queryParams.DateTransaction = DateTransaction.value;
-    if (genero.value) queryParams.genero = genero.value;
+    if (param.nombreApellido) queryParams.nombreApellido = param.nombreApellido;
+    if (param.DateTransaction) queryParams.DateTransaction = param.DateTransaction;
+    if (param.recibirCotizacion) queryParams.recibirCotizacion = param.recibirCotizacion;
+    if (param.tipoViaje) queryParams.tipoViaje = param.tipoViaje;
+    if (param.fechaSalida) queryParams.fechaSalida = param.fechaSalida;
+    if (param.fechaRegreso) queryParams.fechaRegreso = param.fechaRegreso;
     if (tokenAccess) queryParams.token = tokenAccess;
 
     queryParams.page = "1";
@@ -110,30 +107,43 @@ onMounted(() => {
   respuesta();
 });
 
-function changesPage(args) {
-  page.value = args;
-}
-
-function eventButton(args) {
-  console.log("eventListProducts", args);
-  changesPage(args);
-}
-
-function detailUser(id) {
-  updateOfId.value = id;
-  showItems.value = true;
-}
-
-function closeModal() {
+function closetModal() {
   showItems.value = false;
 }
 
-provide("page", {
-  // page,
-  changesPage,
-  resultData,
-  stringLimit,
-});
+// function changesPage(args) {
+//   page.value = args;
+// }
+
+function handleSuccessful(param) {
+  if (param) {
+    respuesta(param);
+  }
+}
+
+// function eventButton(args) {
+//   console.log("eventListProducts", args);
+//   changesPage(args);
+// }
+
+const findClientById = (id) => {
+  const client = clientes.value.find((cliente) => cliente.Uid === id);
+  return client;
+};
+
+function detailUser(id) {
+  const client = findClientById(id);
+  store.personInfo(client);
+  personInfo;
+  showItems.value = true;
+}
+
+// provide("page", {
+//   // page,
+//   changesPage,
+//   resultData,
+//   stringLimit,
+// });
 
 // watch(
 //   () => page.value,
