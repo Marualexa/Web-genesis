@@ -134,7 +134,6 @@ const findClientById = (id) => {
 function detailUser(id) {
   const client = findClientById(id);
   store.personInfo(client);
-  personInfo;
   showItems.value = true;
 }
 
