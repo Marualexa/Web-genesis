@@ -8,7 +8,7 @@
         "input1 input2"
         "input3 input4"
         "date date"
-        "button ."
+        "button button"
     ;
     padding: 15px;
 
@@ -51,8 +51,9 @@
 
     .btn {
         grid-area: button;
-        display: grid;
-        align-self: center;
-        width: 130px;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        height: 35px;
     }
 }

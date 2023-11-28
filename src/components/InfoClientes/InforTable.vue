@@ -3,7 +3,10 @@
   <ModelError v-if="errorData && !isLoading" />
   <InfoUser v-show="showItems" @closet-model="closetModal" />
   <div class="container-info">
-    <p>Información de cliente para cotización</p>
+    <div class="info__title">
+      <img src="../../assets/logo.png" alt="" />
+      <p>Información de cliente para cotización</p>
+    </div>
     <SearchFilters @valid-successful="(filters) => handleSuccessful(filters)" />
     <table class="table" style="width: 100vw">
       <thead>
@@ -29,7 +32,7 @@
         </tr>
       </tbody>
     </table>
-    <!-- <PageNumber @page-event="eventButton" /> -->
+    <PageNumber @page-event="eventButton" />
   </div>
 </template>
 
@@ -38,7 +41,7 @@ import { ref, onMounted, watch, provide } from "vue";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { useAsync } from "../../hooks/useAsync";
-// import PageNumber from "./PageNumber.vue";
+import PageNumber from "./PageNumber.vue";
 import ProgressCircular from "../Modales/ProgressCircular.vue";
 import ModelError from "../Modales/ModelError.vue";
 import InfoUser from "./InfoUser.vue";
