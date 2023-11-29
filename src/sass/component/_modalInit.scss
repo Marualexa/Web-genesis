@@ -10,11 +10,19 @@
 
     .modal__container {
         height: 300px !important;
+
+        @include movil {
+            width: 300px;
+        }
     }
     
     div {
         width: 410px;
         background-color: $White;
+
+        @include movil {
+            width: 290px;
+        }
     }
 
     p {
@@ -22,10 +30,19 @@
         color: $Black;
         font-size: 20px;
         text-align: justify;
+
+        @include movil {
+            font-size: 15px !important;
+        }
     }
 
     button {
         font-family: $fuente-cursiva;
         color: $Black;
+
+        @include movil {
+            font-size: 15px !important;
+        }
     }
+
 }

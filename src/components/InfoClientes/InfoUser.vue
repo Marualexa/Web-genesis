@@ -5,7 +5,7 @@
     <v-card
       class="modal__container d-flex flex-column fill-height justify-center align-center text-white"
     >
-      <h5 style="margin-top: 40px; color: #171926">Datos de viajes</h5>
+      <h5>Datos de viajes</h5>
       <v-card-text class="subheading" style="margin: 20px; background-color: #ffffff">
         <p style="text-align: justify">Nombre y apellido: {{ approvedQuot.nombreApellido }}</p>
         <p style="text-align: justify">Ciudad de origen: {{ approvedQuot.ciudadOrigen }}</p>

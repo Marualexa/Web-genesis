@@ -10,23 +10,55 @@
 
     .modal__container {
         height: 630px !important;
+
+        @include movil {
+            width: 340px;
+        }
     }
 
     div {
         width: 500px;
         background-color: $White;
+
+        @include movil {
+            width: 340px;
+        }
     }
 
-    p {
+    .items__title {
         font-family: $fuente-cursiva;
         color: $Black;
         font-size: 18px;
         text-align: justify;
         width: 465px;
+
+        @include movil {
+            font-size: 16px;
+            text-align: center;
+            width: 320px;
+        }
     }
 
-    button {
+    .items__condicional {
+        .items__p {
+            font-size: 18px;
+            color: $Black;
+            font-family: $fuente-cursiva;
+
+            @include movil {
+                font-size: 15px;
+                width: 320px;
+            }
+        }
+    }
+
+    .button {
         font-family: $fuente-cursiva;
         color: $Black;
+
+        @include movil {
+            font-size: 13px !important;
+            margin-bottom: 10px;
+        }
     }
 }

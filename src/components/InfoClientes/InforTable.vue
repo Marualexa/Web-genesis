@@ -8,30 +8,32 @@
       <p>Información de cliente para cotización</p>
     </div>
     <SearchFilters @valid-successful="(filters) => handleSuccessful(filters)" />
-    <table class="table" style="width: 100vw">
-      <thead>
-        <tr style="text-align: center">
-          <th scope="col">Nombre y apellido</th>
-          <th scope="col">Email</th>
-          <th scope="col">Genero</th>
-          <th scope="col">Fecha y Hora de solicitud</th>
-          <th scope="col">Detalle</th>
-        </tr>
-      </thead>
-      <tbody style="width: 100%">
-        <tr v-for="(cliente, i) in clientes" :key="i" style="text-align: center">
-          <td>{{ cliente.nombreApellido }}</td>
-          <td>{{ cliente.email }}</td>
-          <td>{{ cliente.genero }}</td>
-          <td>{{ dateFormat(cliente.DateTransaction) }}</td>
-          <td>
-            <v-btn @click="(ev) => detailUser(cliente.Uid)"
-              ><img src="../../assets/eye.svg" alt=""
-            /></v-btn>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr style="text-align: center">
+            <th scope="col">Nombre y apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Fecha y Hora de solicitud</th>
+            <th scope="col">Detalle</th>
+          </tr>
+        </thead>
+        <tbody style="width: 100%">
+          <tr v-for="(cliente, i) in clientes" :key="i" style="text-align: center">
+            <td>{{ cliente.nombreApellido }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.genero }}</td>
+            <td>{{ dateFormat(cliente.DateTransaction) }}</td>
+            <td>
+              <v-btn @click="(ev) => detailUser(cliente.Uid)"
+                ><img src="../../assets/eye.svg" alt=""
+              /></v-btn>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <PageNumber @page-event="eventButton" />
   </div>
 </template>
@@ -53,10 +55,6 @@ const { result, makeRequest, errorData, isLoading } = useAsync();
 // const resultData = ref(null);
 // const page = ref("1");
 // const limit = ref("5");
-const nombreApellido = ref("");
-const email = ref("");
-const DateTransaction = ref();
-const genero = ref();
 // const stringLimit = ref("5");
 const showItems = ref(false);
 

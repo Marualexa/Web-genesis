@@ -10,6 +10,12 @@
         width: 30px;
         height: 30px;
         margin-top: 25px;
+
+        @include movil {
+            width: 25px;
+            height: 25px;
+            margin-bottom: 35px;
+        }
     }
 
     .logo {
@@ -19,6 +25,10 @@
         display: flex;
         place-self: center;
         margin-right: 27px;
+
+        @include movil {
+            width: 95px;
+        }
     }
 
     .container-add {
