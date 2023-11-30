@@ -34,16 +34,24 @@
         </tbody>
       </table>
     </div>
-    <PageNumber @page-event="eventButton" />
+    <div class="d-grid gap-2 col-6 mx-auto" style="width: 15%; margin-bottom: 10px">
+      <button
+        type="button"
+        @click="loadMore"
+        class="btn btn-info"
+        :disabled="allDataLoaded"
+      >
+        Cargar más
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch, provide } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { useAsync } from "../../hooks/useAsync";
-import PageNumber from "./PageNumber.vue";
 import ProgressCircular from "../Modales/ProgressCircular.vue";
 import ModelError from "../Modales/ModelError.vue";
 import InfoUser from "./InfoUser.vue";
@@ -52,10 +60,9 @@ import { useCartStore } from "../../store/cartContainer";
 
 const store = useCartStore();
 const { result, makeRequest, errorData, isLoading } = useAsync();
-// const resultData = ref(null);
-// const page = ref("1");
-// const limit = ref("5");
-// const stringLimit = ref("5");
+const page = ref("1");
+const limit = ref("5");
+const allDataLoaded = ref(false);
 const showItems = ref(false);
 
 const clientes = ref([
@@ -74,10 +81,16 @@ const dateFormat = (fecha) => {
   return "";
 };
 
-const respuesta = async (param = {}) => {
+const respuesta = async (param = {}, page = 1) => {
   try {
     let tokenAccess = localStorage.getItem("MyToken");
     let queryParams = {};
+
+    if (page > 1 && clientes.value.length > 0) {
+      const lastItem = clientes.value[clientes.value.length - 1];
+      queryParams.Uid = lastItem.Uid;
+      queryParams.DateTransaction = lastItem.DateTransaction;
+    }
 
     if (param.nombreApellido) queryParams.nombreApellido = param.nombreApellido;
     if (param.DateTransaction) queryParams.DateTransaction = param.DateTransaction;
@@ -87,7 +100,7 @@ const respuesta = async (param = {}) => {
     if (param.fechaRegreso) queryParams.fechaRegreso = param.fechaRegreso;
     if (tokenAccess) queryParams.token = tokenAccess;
 
-    queryParams.page = "1";
+    queryParams.page = page;
     queryParams.Bank = "1";
     queryParams.Category = "1";
     queryParams.Title = "quote";
@@ -96,12 +109,25 @@ const respuesta = async (param = {}) => {
 
     if (result.value && result.value.data && result.value.data.Items) {
       console.log("Resultado de la consulta: ", result.value.data.Items);
-      clientes.value = result.value.data.Items;
+      // clientes.value = (result.value.data.Items);
+      clientes.value = [...clientes.value, ...result.value.data.Items];
+      if (clientes.value.length === 0) {
+        allDataLoaded.value = true;
+      }
     }
   } catch (err) {
     console.error("Oops, algo salió mal! ", err);
     errorData.value = true;
   }
+};
+
+const loadMore = async () => {
+  if (allDataLoaded.value) {
+    return;
+  }
+  page.value++;
+  await respuesta({}, page.value);
+  console.log("Cargar mas", loadMore);
 };
 
 onMounted(() => {
@@ -112,20 +138,11 @@ function closetModal() {
   showItems.value = false;
 }
 
-// function changesPage(args) {
-//   page.value = args;
-// }
-
 function handleSuccessful(param) {
   if (param) {
     respuesta(param);
   }
 }
-
-// function eventButton(args) {
-//   console.log("eventListProducts", args);
-//   changesPage(args);
-// }
 
 const findClientById = (id) => {
   const client = clientes.value.find((cliente) => cliente.Uid === id);
@@ -138,19 +155,12 @@ function detailUser(id) {
   showItems.value = true;
 }
 
-// provide("page", {
-//   // page,
-//   changesPage,
-//   resultData,
-//   stringLimit,
-// });
-
-// watch(
-//   () => page.value,
-//   (val) => {
-//     return respuesta();
-//   }
-// );
+watch(
+  () => page.value,
+  (val) => {
+    return respuesta();
+  }
+);
 </script>
 
 <style lang="sass">

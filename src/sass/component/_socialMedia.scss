@@ -37,7 +37,7 @@
         }
 
         @include movil {
-            grid-template-columns: 180px;
+            grid-template-columns: 200px;
             grid-template-rows: 1fr;
             display: grid;
             justify-content: center;
@@ -82,6 +82,11 @@
                     7px 20px 60px $White;
                 width: 300px;
                 padding: 10px;
+
+                @include movil {
+                    width: 240px;
+                    margin-left: -15px;
+                }
 
                 img {
                     width: 35px;

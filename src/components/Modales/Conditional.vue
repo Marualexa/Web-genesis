@@ -3,10 +3,8 @@
     <v-card
       class="modal__container d-flex flex-column fill-height justify-center align-center text-white"
     >
-      <v-card-text class="subheading" style="overflow-x: scroll;">
-        <p class="items__title">
-          Términos y condiciones para cotizar
-        </p>
+      <v-card-text class="subheading">
+        <p class="items__title">Términos y condiciones para cotizar</p>
         <div class="items__condicional">
           <p class="items__p">
             1. Al solicitar una cotización de viaje con Argent Travel, el cliente acepta
@@ -71,7 +69,6 @@
 <script setup>
 import { ref } from "vue";
 
-let data = ref({ conditional: false });
 let showModal = ref(true);
 
 const agreeWithTerms = () => {

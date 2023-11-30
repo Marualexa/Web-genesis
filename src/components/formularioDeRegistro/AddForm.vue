@@ -137,26 +137,26 @@
         </div>
       </div>
 
+      <div class="col-md-6">
+        <label for="fechaSalida" class="form-label">FECHA DE SALIDA</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fechaSalida"
+          v-model="data.fechaSalida"
+          :class="{ 'is-invalid': hasError('fechaSalida') }"
+        />
+        <div v-if="hasError('fechaSalida')" class="invalid-feedback">
+          {{ errorObject.errorMessage }}
+        </div>
+      </div>
+
       <div
         id="contenedorFechas"
         class="row"
         style="margin-top: 20px"
         v-if="data.tipoViaje === 'Viaje de ida y vuelta'"
       >
-        <div class="col-md-6">
-          <label for="fechaSalida" class="form-label">FECHA DE SALIDA</label>
-          <input
-            type="date"
-            class="form-control"
-            id="fechaSalida"
-            v-model="data.fechaSalida"
-            :class="{ 'is-invalid': hasError('fechaSalida') }"
-          />
-          <div v-if="hasError('fechaSalida')" class="invalid-feedback">
-            {{ errorObject.errorMessage }}
-          </div>
-        </div>
-
         <div class="col-md-6">
           <label for="fechaRegreso" class="form-label">FECHA DE REGRESO</label>
           <input
@@ -239,6 +239,8 @@ import ProgressCircular from "../Modales/ProgressCircular.vue";
 import ModelError from "../Modales/ModelError.vue";
 import ModeOfRegis from "../Modales/ModeOfRegis.vue";
 import Conditional from "../Modales/Conditional.vue";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
 const { makeRequest, errorData, appStatus } = useAsync();
 const router = useRouter();
@@ -250,6 +252,10 @@ function closetForm() {
   router.push({ name: "ImportApp" });
 }
 
+const dateFormat = () => {
+  return format(new Date(), "yyyy-MM-dd", { locale: es });
+};
+
 const data = reactive({
   nombreApellido: "",
   email: "",
@@ -257,11 +263,11 @@ const data = reactive({
   genero: "",
   ciudadOrigen: "",
   ciudadDestino: "",
-  tipoViaje: "Viaje de ida",
-  fechaSalida: "",
-  fechaRegreso: "",
+  tipoViaje: "",
+  fechaSalida: dateFormat(),
+  fechaRegreso: dateFormat(),
   recibirCotizacion: "WhatsApp",
-  description: "",
+  description: "Viaje ida",
   conditional: false,
 });
 
@@ -273,8 +279,8 @@ const formData = {
   ciudadOrigen: Joi.string().required(),
   ciudadDestino: Joi.string().required(),
   tipoViaje: Joi.string().valid("Viaje de ida", "Viaje de ida y vuelta").required(),
-  fechaSalida: Joi.date().iso().optional().allow(null),
-  fechaRegreso: Joi.date().iso().optional().allow(null),
+  fechaSalida: Joi.date().iso().optional().allow(""),
+  fechaRegreso: Joi.date().iso().optional().allow(""),
   recibirCotizacion: Joi.string().valid("WhatsApp", "Correo Electrónico").required(),
   description: Joi.string().required(),
   conditional: Joi.boolean().valid(true).required(),
@@ -334,8 +340,9 @@ function createButton() {
 
       errorObject.errorName = final;
       errorObject.errorMessage = final + " " + messageIndix;
-      console.log("error mensaje", final);
-      console.log("condional", data.conditional);
+      console.log("Que llega", final);
+      console.log("Mensaje", messageIndix);
+      console.log("Datos reactivos", data);
     } else {
       loadModule.value = true;
       let tokenAccess = localStorage.getItem("MyToken");
@@ -351,8 +358,8 @@ function createButton() {
         ciudadOrigen: data.ciudadOrigen,
         ciudadDestino: data.ciudadDestino,
         tipoViaje: data.tipoViaje,
-        fechaSalida: data.fechaSalida,
-        fechaRegreso: data.fechaRegreso,
+        fechaSalida: new Date(data.fechaSalida).toISOString(),
+        fechaRegreso: new Date(data.fechaRegreso).toISOString(),
         recibirCotizacion: data.recibirCotizacion,
         Description: data.description,
         conditional: data.conditional,
