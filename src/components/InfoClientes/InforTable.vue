@@ -109,7 +109,8 @@ const respuesta = async (param = {}, page = 1) => {
 
     if (result.value && result.value.data && result.value.data.Items) {
       console.log("Resultado de la consulta: ", result.value.data.Items);
-      clientes.value = (result.value.data.Items);
+      // clientes.value = (result.value.data.Items);
+      clientes.value = [...clientes.value, ...result.value.data.Items];
       if (clientes.value.length === 0) {
         allDataLoaded.value = true;
       }

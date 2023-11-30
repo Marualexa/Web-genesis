@@ -128,7 +128,7 @@ function loginAdd() {
         );
         let myToken = result.value.data.AuthenticationResult.AccessToken;
         localStorage.setItem("MyToken", myToken);
-        router.push({ name: "form" });
+        router.push({ name: "infoTable" });
       } else {
         generalError.message = "¡Ha ocurrido un error! Por favor, verifica tus datos.";
         console.log("AccessToken no se encuentra disponible");
