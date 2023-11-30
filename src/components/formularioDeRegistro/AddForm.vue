@@ -257,13 +257,13 @@ const dateFormat = () => {
 };
 
 const data = reactive({
-  nombreApellido: "Genesis Suarez",
-  email: "genesis123@gmail.com",
-  numeroTelefonico: "3210825242",
-  genero: "femenino",
-  ciudadOrigen: "Medellin",
-  ciudadDestino: "Cucuta",
-  tipoViaje: "Viaje de ida",
+  nombreApellido: "",
+  email: "",
+  numeroTelefonico: "",
+  genero: "",
+  ciudadOrigen: "",
+  ciudadDestino: "",
+  tipoViaje: "",
   fechaSalida: dateFormat(),
   fechaRegreso: dateFormat(),
   recibirCotizacion: "WhatsApp",

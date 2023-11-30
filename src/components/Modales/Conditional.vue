@@ -3,7 +3,7 @@
     <v-card
       class="modal__container d-flex flex-column fill-height justify-center align-center text-white"
     >
-      <v-card-text class="subheading" style="overflow-x: scroll;">
+      <v-card-text class="subheading">
         <p class="items__title">
           Términos y condiciones para cotizar
         </p>

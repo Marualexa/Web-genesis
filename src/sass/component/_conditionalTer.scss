@@ -19,6 +19,7 @@
     div {
         width: 500px;
         background-color: $White;
+        overflow-x: hidden;
 
         @include movil {
             width: 340px;
@@ -28,9 +29,10 @@
     .items__title {
         font-family: $fuente-cursiva;
         color: $Black;
-        font-size: 18px;
-        text-align: justify;
-        width: 465px;
+        font-size: 20px;
+        text-align: center;
+        width: 463px;
+        margin-top: 20px;
 
         @include movil {
             font-size: 16px;
@@ -40,10 +42,13 @@
     }
 
     .items__condicional {
+        padding: 20px;
         .items__p {
             font-size: 18px;
             color: $Black;
             font-family: $fuente-cursiva;
+            padding-right: 15px;
+            text-align: justify;
 
             @include movil {
                 font-size: 15px;
