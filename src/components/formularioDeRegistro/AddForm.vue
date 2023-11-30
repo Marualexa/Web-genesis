@@ -334,8 +334,6 @@ function createButton() {
 
       errorObject.errorName = final;
       errorObject.errorMessage = final + " " + messageIndix;
-      console.log("error mensaje", final);
-      console.log("condional", data.conditional);
     } else {
       loadModule.value = true;
       let tokenAccess = localStorage.getItem("MyToken");
