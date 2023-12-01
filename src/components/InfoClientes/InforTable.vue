@@ -111,7 +111,7 @@ const respuesta = async (param = {}, page = 1) => {
       console.log("Resultado de la consulta: ", result.value.data.Items);
       // clientes.value = (result.value.data.Items);
       clientes.value = [...clientes.value, ...result.value.data.Items];
-      if (clientes.value.length === 0) {
+      if (clientes.value.length === 0 || result.value.data.Items.length === 0) {
         allDataLoaded.value = true;
       }
     }
@@ -155,13 +155,6 @@ function detailUser(id) {
   store.personInfo(client);
   showItems.value = true;
 }
-
-watch(
-  () => page.value,
-  (val) => {
-    return respuesta();
-  }
-);
 </script>
 
 <style lang="sass">
